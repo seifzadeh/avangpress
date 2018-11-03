@@ -24,8 +24,8 @@
 				<!-- Wrap entire page in <form> -->
 				<form method="post">
 
-					<input type="hidden" name="_avangpress_action" value="add_form" />
-					<?php wp_nonce_field('add_form', '_avangpress_nonce');?>
+					<input type="hidden" name="avangpress_action" value="add_form" />
+					<?php wp_nonce_field('add_form', 'avangpress_nonce');?>
 
 
 					<div class="small-margin">

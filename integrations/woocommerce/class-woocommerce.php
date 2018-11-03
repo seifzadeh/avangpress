@@ -49,7 +49,7 @@ class Avangpress_WooCommerce_Integration extends Avangpress_Integration {
 	 * @param int $order_id
 	 */
 	public function save_woocommerce_checkout_checkbox_value($order_id) {
-		update_post_meta($order_id, '_avangpress_optin', $this->checkbox_was_checked());
+		update_post_meta($order_id, 'avangpress_optin', $this->checkbox_was_checked());
 	}
 
 	/**
@@ -69,7 +69,7 @@ class Avangpress_WooCommerce_Integration extends Avangpress_Integration {
 			return false;
 		}
 
-		$do_optin = get_post_meta($order_id, '_avangpress_optin', true);
+		$do_optin = get_post_meta($order_id, 'avangpress_optin', true);
 		return $do_optin;
 	}
 

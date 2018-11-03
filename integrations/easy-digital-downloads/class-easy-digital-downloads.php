@@ -46,7 +46,7 @@ class Avangpress_Easy_Digital_Downloads_Integration extends Avangpress_Integrati
 			return $meta;
 		}
 
-		$meta['_avangpress_optin'] = 1;
+		$meta['avangpress_optin'] = 1;
 		return $meta;
 	}
 
@@ -68,7 +68,7 @@ class Avangpress_Easy_Digital_Downloads_Integration extends Avangpress_Integrati
 		}
 
 		$meta = edd_get_payment_meta( $object_id );
-		if( is_array( $meta ) && isset( $meta['_avangpress_optin'] ) && $meta['_avangpress_optin'] ) {
+		if( is_array( $meta ) && isset( $meta['avangpress_optin'] ) && $meta['avangpress_optin'] ) {
 			return true;
 		}
 

@@ -8,7 +8,7 @@
  * @param $integrations
  * @ignore
  */
-function _avangpress_integrations_table($integrations) {
+function avangpress_integrations_table($integrations) {
 	?>
 	<table class="avangpress-table widefat striped">
 
@@ -79,12 +79,12 @@ _e($integration->description, 'avangpress');
 				<?php settings_fields('avangpress_integrations_settings');?>
 
 				<h3><?php _e('Enabled integrations', 'avangpress');?></h3>
-				<?php _avangpress_integrations_table($enabled_integrations);?>
+				<?php avangpress_integrations_table($enabled_integrations);?>
 
 				<div class="medium-margin"></div>
 
 				<h3><?php _e('Available integrations', 'avangpress');?></h3>
-				<?php _avangpress_integrations_table($available_integrations);?>
+				<?php avangpress_integrations_table($available_integrations);?>
                 <p><?php echo __("Greyed out integrations will become available after installing & activating the corresponding plugin.", 'avangpress'); ?></p>
 
 

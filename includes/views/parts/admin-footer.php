@@ -3,7 +3,7 @@
 /**
  * @ignore
  */
-function _avangpress_admin_translation_notice() {
+function avangpress_admin_translation_notice() {
 
 	// show for every language other than the default
 	if (stripos(get_locale(), 'en_us') === 0) {
@@ -18,7 +18,7 @@ function _avangpress_admin_translation_notice() {
 /**
  * @ignore
  */
-function _avangpress_admin_github_notice() {
+function avangpress_admin_github_notice() {
 
 	if (strpos($_SERVER['HTTP_HOST'], 'local') !== 0 && !WP_DEBUG) {
 		return;
@@ -31,13 +31,13 @@ function _avangpress_admin_github_notice() {
 /**
  * @ignore
  */
-function _avangpress_admin_disclaimer_notice() {
+function avangpress_admin_disclaimer_notice() {
 	echo '<p class="help">' . __('This plugin is developed by AvangPress for wordpress.', 'avangpress') . '</p>';
 }
 
-add_action('avangpress_admin_footer', '_avangpress_admin_translation_notice', 20);
-add_action('avangpress_admin_footer', '_avangpress_admin_github_notice', 50);
-add_action('avangpress_admin_footer', '_avangpress_admin_disclaimer_notice', 80);
+add_action('avangpress_admin_footer', 'avangpress_admin_translation_notice', 20);
+add_action('avangpress_admin_footer', 'avangpress_admin_github_notice', 50);
+add_action('avangpress_admin_footer', 'avangpress_admin_disclaimer_notice', 80);
 ?>
 
 <div class="big-margin">

@@ -219,8 +219,8 @@ class Avangpress_Form {
         $settings = $default_settings;
 
         // get custom settings from meta
-        if( ! empty( $post_meta['_avangpress_settings'] ) ) {
-            $meta = $post_meta['_avangpress_settings'][0];
+        if( ! empty( $post_meta['avangpress_settings'] ) ) {
+            $meta = $post_meta['avangpress_settings'][0];
             $meta = (array) maybe_unserialize( $meta );
 
             // ensure lists is an array
@@ -371,9 +371,9 @@ class Avangpress_Form {
             $errors[] = 'no_lists_selected';
         }
 
-        if( ! isset( $this->raw_data['_avangpress_timestamp'] ) || $this->raw_data['_avangpress_timestamp'] > ( time() - 2 ) ) {
+        if( ! isset( $this->raw_data['avangpress_timestamp'] ) || $this->raw_data['avangpress_timestamp'] > ( time() - 2 ) ) {
             $errors[] = 'spam';
-        } else if( ! isset( $this->raw_data['_avangpress_honeypot'] ) || ! empty( $this->raw_data['_avangpress_honeypot'] ) ) {
+        } else if( ! isset( $this->raw_data['avangpress_honeypot'] ) || ! empty( $this->raw_data['avangpress_honeypot'] ) ) {
             $errors[] = 'spam';
         }
 
@@ -443,10 +443,10 @@ class Avangpress_Form {
         // update form configuration from given data
         $config = array();
         $map = array(
-            '_avangpress_lists' => 'lists',
-            '_avangpress_action' => 'action',
-            '_avangpress_form_element_id' => 'element_id',
-            '_avangpress_email_type' => 'email_type'
+            'avangpress_lists' => 'lists',
+            'avangpress_action' => 'action',
+            'avangpress_form_element_id' => 'element_id',
+            'avangpress_email_type' => 'email_type'
         );
 
         // use isset here to allow empty lists (which should show a notice)

@@ -198,7 +198,7 @@ function avangpress_sanitize_deep($value)
  * @param array $data
  * @return array
  */
-function _avangpress_update_groupings_data($data = array())
+function avangpress_update_groupings_data($data = array())
 {
 
     // data still has old "GROUPINGS" key?
@@ -337,7 +337,7 @@ function avangpress_get_email_type()
  * @ignore
  * @return bool
  */
-function _avangpress_use_sslverify()
+function avangpress_use_sslverify()
 {
 
     // Disable for all transports other than CURL
@@ -378,7 +378,7 @@ function avangpress_obfuscate_string($string)
  * @internal
  * @ignore
  */
-function _avangpress_obfuscate_email_addresses_callback($m)
+function avangpress_obfuscate_email_addresses_callback($m)
 {
     $one = $m[1] . str_repeat('*', strlen($m[2]));
     $two = $m[3] . str_repeat('*', strlen($m[4]));
@@ -394,7 +394,7 @@ function _avangpress_obfuscate_email_addresses_callback($m)
  */
 function avangpress_obfuscate_email_addresses($string)
 {
-    return preg_replace_callback('/([\w\.]{1,4})([\w\.]*)\@(\w{1,2})(\w*)\.(\w+)/', '_avangpress_obfuscate_email_addresses_callback', $string);
+    return preg_replace_callback('/([\w\.]{1,4})([\w\.]*)\@(\w{1,2})(\w*)\.(\w+)/', 'avangpress_obfuscate_email_addresses_callback', $string);
 }
 
 /**

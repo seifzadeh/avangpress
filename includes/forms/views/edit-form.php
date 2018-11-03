@@ -51,9 +51,9 @@ $tabs = apply_filters('avangpress_admin_edit_form_tabs', $tabs);
             <form method="post">
                 <?php // default submit button to prevent opening preview ?>
                 <input type="submit" style="display: none; "/>
-                <input type="hidden" name="_avangpress_action" value="edit_form"/>
+                <input type="hidden" name="avangpress_action" value="edit_form"/>
                 <input type="hidden" name="avangpress_form_id" value="<?php echo esc_attr($form->ID); ?>"/>
-                <?php wp_nonce_field('edit_form', '_avangpress_nonce'); ?>
+                <?php wp_nonce_field('edit_form', 'avangpress_nonce'); ?>
 
                 <div id="titlediv" class="small-margin">
                     <div id="titlewrap">

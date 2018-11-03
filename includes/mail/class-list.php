@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class Avangpress_AvangPress_List
+ * Class Avangpress_List
  *
  * Represents a list in AvangPress
  *
@@ -30,12 +30,12 @@ class Avangpress_Mail_List {
 	public $subscriber_count = 0;
 
 	/**
-	 * @var Avangpress_AvangPress_Merge_Field[]
+	 * @var Avangpress_Merge_Field[]
 	 */
 	public $merge_fields = array();
 
 	/**
-	 * @var Avangpress_AvangPress_Interest_Category[]
+	 * @var Avangpress_Interest_Category[]
 	 */
 	public $interest_categories = array();
 
@@ -75,7 +75,7 @@ class Avangpress_Mail_List {
 
 	/**
 	 * @param string $tag
-	 * @return Avangpress_AvangPress_Merge_Field
+	 * @return Avangpress_Merge_Field
 	 *
 	 * @throws Exception
 	 */
@@ -101,7 +101,7 @@ class Avangpress_Mail_List {
 	 * @since 4.0
 	 *
 	 * @param string $interest_id
-	 * @return Avangpress_AvangPress_Interest_Category
+	 * @return Avangpress_Interest_Category
 	 *
 	 * @throws Exception
 	 */
@@ -125,7 +125,7 @@ class Avangpress_Mail_List {
 	 *
 	 * @param string $category_id ID of the Interest Grouping
 	 *
-	 * @return Avangpress_AvangPress_Interest_Category
+	 * @return Avangpress_Interest_Category
 	 *
 	 * @throws Exception
 	 */
@@ -156,7 +156,7 @@ class Avangpress_Mail_List {
 	 * Get the name of an interest category by its ID
 	 *
 	 * @deprecated 4.0
-	 * @use Avangpress_AvangPress_List::get_interest_category
+	 * @use Avangpress_List::get_interest_category
 	 *
 	 * @param string $category_id
 	 *
@@ -169,7 +169,7 @@ class Avangpress_Mail_List {
 
 	/**
 	 * @deprecated 4.0
-	 * @use Avangpress_AvangPress_List::get_field_by_tag
+	 * @use Avangpress_List::get_field_by_tag
 	 *
 	 * @param string $tag
 	 *

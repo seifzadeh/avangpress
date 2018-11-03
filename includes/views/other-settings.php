@@ -8,7 +8,7 @@ defined('ABSPATH') or exit;
  * @ignore
  * @param array $opts
  */
-function _avangpress_usage_tracking_setting($opts) {
+function avangpress_usage_tracking_setting($opts) {
 	?>
 	<div class="medium-margin" >
 		<h3><?php _e('Miscellaneous settings', 'avangpress');?></h3>
@@ -27,7 +27,7 @@ function _avangpress_usage_tracking_setting($opts) {
 	<?php
 }
 
-add_action('avangpress_admin_other_settings', '_avangpress_usage_tracking_setting', 70);
+add_action('avangpress_admin_other_settings', 'avangpress_usage_tracking_setting', 70);
 ?>
 <div id="avangpress-admin" class="wrap avangpress-settings">
 
@@ -104,7 +104,7 @@ $line = $log_reader->read_as_html();
 					</div>
 
 					<form method="post">
-						<input type="hidden" name="_avangpress_action" value="empty_debug_log">
+						<input type="hidden" name="avangpress_action" value="empty_debug_log">
 						<p>
 							<input type="submit" class="button"
 								   value="<?php esc_attr_e('Empty Log', 'avangpress');?>"/>

@@ -12,7 +12,7 @@
 class Avangpress_WPForms_Field extends WPForms_Field {
 
 	/**
-	 * @var Avangpress_AvangPress
+	 * @var Avangpress
 	 */
 	private $mail;
 
@@ -82,7 +82,7 @@ class Avangpress_WPForms_Field extends WPForms_Field {
 	}
 
 	private function field_option_mail_list($field) {
-		$mail = new Avangpress_AvangPress();
+		$mail = new Avangpress_Mail();
 
 		// Field option label
 		$tooltip = __('Select the AvangPress list to subscribe to.', 'avangpress');

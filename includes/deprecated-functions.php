@@ -11,7 +11,7 @@
 function avangpress_guess_merge_vars( $merge_vars = array() ) {
 	_deprecated_function( __FUNCTION__, 'Mail for WordPress v4.0' );
 	$merge_vars = avangpress_add_name_data( $merge_vars );
-	$merge_vars = _avangpress_update_groupings_data( $merge_vars );
+	$merge_vars = avangpress_update_groupings_data( $merge_vars );
 	return $merge_vars;
 }
 

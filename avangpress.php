@@ -1,16 +1,16 @@
 <?php
 /*
-Plugin Name: AvangPress Wordpress Plugin
+Plugin Name: AvangPress
 Plugin URI: https://avangpress.com/blog/avangpress-wp-plugin
 Description: AvangPress WordPress plugin by mehrdad seifzadeh.
 Version: 0.0.1
 Author: mehrdad.seifzadeh
-Author URI: https://mdeveloper.ir/
+Author URI: http://seifzadeh.blog.ir/
 Text Domain: avangpress
 Domain Path: /languages
 License: GPL v3
 
-AvangPress WordPress Plugin
+AvangPress
 Copyright (C) 2018, Mehrdad Seifzadeh, mehrdad.seifzadeh@gmail.com
 
 This program is free software: you can redistribute it and/or modify
@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 /**
-https://avangpress.com/docs/#/
+https://avangemail.com/docs/#/
  */
 
 // Prevent direct file access
@@ -41,7 +41,7 @@ defined('ABSPATH') or exit;
  * @access private
  * @return bool
  */
-function _avangpress_load_plugin() {
+function avangpress_load_plugin() {
 
 	global $avangpress;
 
@@ -102,12 +102,12 @@ function _avangpress_load_plugin() {
 }
 
 // bootstrap custom integrations
-function _avangpress_bootstrap_integrations() {
+function avangpress_bootstrap_integrations() {
 	require_once Avangpress_PLUGIN_DIR . 'integrations/bootstrap.php';
 }
 
-add_action('plugins_loaded', '_avangpress_load_plugin', 8);
-add_action('plugins_loaded', '_avangpress_bootstrap_integrations', 90);
+add_action('plugins_loaded', 'avangpress_load_plugin', 8);
+add_action('plugins_loaded', 'avangpress_bootstrap_integrations', 90);
 
 /**
  * Flushes transient cache & schedules refresh hook.
@@ -115,7 +115,7 @@ add_action('plugins_loaded', '_avangpress_bootstrap_integrations', 90);
  * @ignore
  * @since 0.1
  */
-function _avangpress_on_plugin_activation() {
+function avangpress_on_plugin_activation() {
 	$time_string = sprintf("tomorrow %d:%d%d am", rand(1, 6), rand(0, 5), rand(0, 9));
 	wp_schedule_event(strtotime($time_string), 'daily', 'avangpress_refresh_mail_lists');
 }
@@ -126,12 +126,12 @@ function _avangpress_on_plugin_activation() {
  * @ignore
  * @since 0.0.1
  */
-function _avangpress_on_plugin_deactivation() {
+function avangpress_on_plugin_deactivation() {
 	global $wpdb;
 	wp_clear_scheduled_hook('avangpress_refresh_mail_lists');
 
 	$wpdb->query("DELETE FROM {$wpdb->options} WHERE option_name LIKE 'avangpress_mail_list_%'");
 }
 
-register_activation_hook(__FILE__, '_avangpress_on_plugin_activation');
-register_deactivation_hook(__FILE__, '_avangpress_on_plugin_deactivation');
+register_activation_hook(__FILE__, 'avangpress_on_plugin_activation');
+register_deactivation_hook(__FILE__, 'avangpress_on_plugin_deactivation');

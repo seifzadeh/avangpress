@@ -33,7 +33,6 @@
 					echo '</thead>';
 
 					foreach ($lists as $k => $list) {
-						/** @var Avangpress_AvangPress_List $list */
 						echo '<tr>';
 						echo sprintf('<td><code>%s</code></td>', esc_html($list->ID));
 						echo sprintf('<td><code>%s</code></td>', esc_html($list->name));

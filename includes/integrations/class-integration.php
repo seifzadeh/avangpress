@@ -50,7 +50,7 @@ abstract class Avangpress_Integration {
 
 		// if checkbox name is not set, set a good custom value
 		if( empty( $this->checkbox_name ) ) {
-			$this->checkbox_name = '_avangpress_subscribe_' . $this->slug;
+			$this->checkbox_name = 'avangpress_subscribe_' . $this->slug;
 		}
 	}
 
@@ -293,9 +293,9 @@ abstract class Avangpress_Integration {
 		$lists = $this->options['lists'];
 
 		// get lists from request, if set.
-		if( ! empty( $data['_avangpress_lists'] ) ) {
+		if( ! empty( $data['avangpress_lists'] ) ) {
 
-			$lists = $data['_avangpress_lists'];
+			$lists = $data['avangpress_lists'];
 
 			// ensure lists is an array
 			if( ! is_array( $lists ) ) {

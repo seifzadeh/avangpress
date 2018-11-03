@@ -79,20 +79,20 @@ class Avangpress_Form_Element {
 	protected function get_hidden_fields() {
 
 		// hidden fields
-		$hidden_fields =  '<label style="display: none !important;">' . __( 'Leave this field empty if you\'re human:', 'avangpress' ) . ' ' . '<input type="text" name="_avangpress_honeypot" value="" tabindex="-1" autocomplete="off" /></label>';
-		$hidden_fields .= '<input type="hidden" name="_avangpress_timestamp" value="'. time() . '" />';
-		$hidden_fields .= '<input type="hidden" name="_avangpress_form_id" value="'. esc_attr( $this->form->ID ) .'" />';
-		$hidden_fields .= '<input type="hidden" name="_avangpress_form_element_id" value="'. esc_attr( $this->ID ) .'" />';
+		$hidden_fields =  '<label style="display: none !important;">' . __( 'Leave this field empty if you\'re human:', 'avangpress' ) . ' ' . '<input type="text" name="avangpress_honeypot" value="" tabindex="-1" autocomplete="off" /></label>';
+		$hidden_fields .= '<input type="hidden" name="avangpress_timestamp" value="'. time() . '" />';
+		$hidden_fields .= '<input type="hidden" name="avangpress_form_id" value="'. esc_attr( $this->form->ID ) .'" />';
+		$hidden_fields .= '<input type="hidden" name="avangpress_form_element_id" value="'. esc_attr( $this->ID ) .'" />';
 
 		// was "lists" parameter passed in shortcode arguments?
 		if( ! empty( $this->config['lists'] ) ) {
 			$lists_string = is_array( $this->config['lists'] ) ? join( ',', $this->config['lists'] ) : $this->config['lists'];
-			$hidden_fields .= '<input type="hidden" name="_avangpress_lists" value="'. esc_attr( $lists_string ) . '" />';
+			$hidden_fields .= '<input type="hidden" name="avangpress_lists" value="'. esc_attr( $lists_string ) . '" />';
 		}
 
 		// was "lists" parameter passed in shortcode arguments?
 		if( ! empty( $this->config['email_type'] ) ) {
-			$hidden_fields .= '<input type="hidden" name="_avangpress_email_type" value="'. esc_attr( $this->config['email_type'] ) . '" />';
+			$hidden_fields .= '<input type="hidden" name="avangpress_email_type" value="'. esc_attr( $this->config['email_type'] ) . '" />';
 		}
 
 		return (string) $hidden_fields;

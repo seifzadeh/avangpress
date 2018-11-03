@@ -15,7 +15,7 @@ class Avangpress_Admin_Review_Notice {
     /**
      * @var string
      */
-    protected $meta_key_dismissed = '_avangpress_review_notice_dismissed';
+    protected $meta_key_dismissed = 'avangpress_review_notice_dismissed';
 
     /**
      * Avangpress_Admin_Review_Notice constructor.
@@ -68,7 +68,7 @@ class Avangpress_Admin_Review_Notice {
         echo __( 'You\'ve been using AvangPress for WordPress for some time now; we hope you love it!', 'avangpress' ) . ' <br />';
         echo sprintf( __( 'If you do, please <a href="%s">leave us a 5★ rating on WordPress.org</a>. It would be of great help to us.', 'avangpress' ), 'https://wordpress.org/support/view/plugin-reviews/avangpress?rate=5#new-post' );
         echo '</p>';
-        echo '<form method="POST" id="avangpress-dismiss-review-form"><button type="submit" class="notice-dismiss"><span class="screen-reader-text">'. __( 'Dismiss this notice.', 'avangpress' ) .'</span></button><input type="hidden" name="_avangpress_action" value="dismiss_review_notice"/></form>';
+        echo '<form method="POST" id="avangpress-dismiss-review-form"><button type="submit" class="notice-dismiss"><span class="screen-reader-text">'. __( 'Dismiss this notice.', 'avangpress' ) .'</span></button><input type="hidden" name="avangpress_action" value="dismiss_review_notice"/></form>';
         echo '</div>';
         return true;
     }

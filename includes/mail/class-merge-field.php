@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class Avangpress_AvangPress_Merge_Field
+ * Class Avangpress_Merge_Field
  *
  * Represents a Merge Field in AvangPress
  *
@@ -77,7 +77,7 @@ class Avangpress_Mail_Merge_Field {
 	 *
 	 * @param object $data
 	 *
-	 * @return Avangpress_AvangPress_Merge_Field
+	 * @return Avangpress_Merge_Field
 	 */
 	public static function from_data($data) {
 

@@ -125,7 +125,7 @@ class Avangpress_Forms_Admin {
 	 */
 	public function process_add_form() {
 
-		check_admin_referer('add_form', '_avangpress_nonce');
+		check_admin_referer('add_form', 'avangpress_nonce');
 
 		$form_data = $_POST['avangpress_form'];
 		$form_content = include Avangpress_PLUGIN_DIR . 'config/default-form-content.php';
@@ -144,7 +144,7 @@ class Avangpress_Forms_Admin {
 
 		// if settings were passed, save those too.
 		if (isset($form_data['settings'])) {
-			update_post_meta($form_id, '_avangpress_settings', $form_data['settings']);
+			update_post_meta($form_id, 'avangpress_settings', $form_data['settings']);
 		}
 
 		// set default form ID
@@ -189,7 +189,7 @@ class Avangpress_Forms_Admin {
 				$post_data['ID'] = $data['ID'];
 
 				// merge new settings  with current settings to allow passing partial data
-				$current_settings = get_post_meta($post->ID, '_avangpress_settings', true);
+				$current_settings = get_post_meta($post->ID, 'avangpress_settings', true);
 				if (is_array($current_settings)) {
 					$data['settings'] = array_merge($current_settings, $data['settings']);
 				}
@@ -206,7 +206,7 @@ class Avangpress_Forms_Admin {
 		remove_all_filters('content_save_pre');
 
 		$form_id = wp_insert_post($post_data);
-		update_post_meta($form_id, '_avangpress_settings', $data['settings']);
+		update_post_meta($form_id, 'avangpress_settings', $data['settings']);
 
 		// save form messages in individual meta keys
 		foreach ($data['messages'] as $key => $message) {
@@ -273,7 +273,7 @@ class Avangpress_Forms_Admin {
 	 */
 	public function process_save_form() {
 
-		check_admin_referer('edit_form', '_avangpress_nonce');
+		check_admin_referer('edit_form', 'avangpress_nonce');
 		$form_id = (int) $_POST['avangpress_form_id'];
 
 		$form_data = $_POST['avangpress_form'];

@@ -4,7 +4,7 @@
 
 <div id="avangpress-list-fetcher">
 	<form method="post" action="">
-		<input type="hidden" name="_avangpress_action" value="empty_lists_cache" />
+		<input type="hidden" name="avangpress_action" value="empty_lists_cache" />
 		<p>
 			<input type="submit" value="<?php _e('Renew AvangPress lists', 'avangpress');?>" class="button" />
 		</p>
@@ -34,7 +34,7 @@
 	echo '</thead>';
 
 	foreach ($lists as $list) {
-		/** @var Avangpress_AvangPress_List $list */
+		/** @var Avangpress_List $list */
 		echo '<tr>';
 		echo sprintf('<td><code>%s</code></td>', esc_html($list->name));
 		echo sprintf('<td><code>%s</code></td>', esc_html($list->id));

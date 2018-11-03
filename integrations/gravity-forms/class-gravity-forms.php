@@ -87,7 +87,7 @@ class Avangpress_Gravity_Forms_Integration extends Avangpress_Integration {
 			return;
 		}
 
-		$mail = new Avangpress_AvangPress();
+		$mail = new Avangpress_Mail();
 		$lists = $mail->get_cached_lists();
 		?>
         <li class="mail_list_setting field_setting">

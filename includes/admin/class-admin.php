@@ -88,19 +88,19 @@ class Avangpress_Admin {
 	}
 
 	/**
-	 * Listen for `_avangpress_action` requests
+	 * Listen for `avangpress_action` requests
 	 */
 	public function listen_for_actions() {
 
 		// listen for any action (if user is authorised)
-		if (!$this->tools->is_user_authorized() || !isset($_REQUEST['_avangpress_action'])) {
+		if (!$this->tools->is_user_authorized() || !isset($_REQUEST['avangpress_action'])) {
 			return false;
 		}
 
-		$action = (string) $_REQUEST['_avangpress_action'];
+		$action = (string) $_REQUEST['avangpress_action'];
 
 		/**
-		 * Allows you to hook into requests containing `_avangpress_action` => action name.
+		 * Allows you to hook into requests containing `avangpress_action` => action name.
 		 *
 		 * The dynamic portion of the hook name, `$action`, refers to the action name.
 		 *
@@ -112,7 +112,7 @@ class Avangpress_Admin {
 		do_action('avangpress_admin_' . $action);
 
 		// redirect back to where we came from
-		$redirect_url = !empty($_POST['_redirect_to']) ? $_POST['_redirect_to'] : remove_query_arg('_avangpress_action');
+		$redirect_url = !empty($_POST['_redirect_to']) ? $_POST['_redirect_to'] : remove_query_arg('avangpress_action');
 		wp_redirect($redirect_url);
 		exit;
 	}
@@ -450,7 +450,7 @@ class Avangpress_Admin {
 
 		echo '<div class="notice notice-warning avangpress-is-dismissible">';
 		echo '<p>' . sprintf(__('To get started with AvangPress for WordPress, please <a href="%s">enter your AvangPress API key on the settings page of the plugin</a>.', 'avangpress'), admin_url('admin.php?page=avangpress')) . '</p>';
-		echo '<form method="post"><input type="hidden" name="_avangpress_action" value="dismiss_api_key_notice" /><button type="submit" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button></form>';
+		echo '<form method="post"><input type="hidden" name="avangpress_action" value="dismiss_api_key_notice" /><button type="submit" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button></form>';
 		echo '</div>';
 	}
 

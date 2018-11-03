@@ -22,13 +22,13 @@ class Avangpress_Form_Listener {
 	 * @return bool
 	 */
 	public function listen() {
-		if (empty($_POST['_avangpress_form_id'])) {
+		if (empty($_POST['avangpress_form_id'])) {
 			return false;
 		}
 
 		// get form instance
 		try {
-			$form_id = (int) $_POST['_avangpress_form_id'];
+			$form_id = (int) $_POST['avangpress_form_id'];
 			$form = avangpress_get_form($form_id);
 		} catch (Exception $e) {
 			return false;

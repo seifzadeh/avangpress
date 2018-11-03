@@ -786,7 +786,7 @@
                     }
 
                     register(category, {
-                        name: '_avangpress_lists',
+                        name: 'avangpress_lists',
                         type: 'checkbox',
                         title: i18n.listChoice,
                         choices: choices,
@@ -799,7 +799,7 @@
                         'unsubscribe': "Unsubscribe"
                     };
                     register(category, {
-                        name: '_avangpress_action',
+                        name: 'avangpress_action',
                         type: 'radio',
                         title: i18n.formAction,
                         choices: choices,

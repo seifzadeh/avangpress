@@ -49,7 +49,7 @@ class Avangpress_Contact_Form_7_Integration extends Avangpress_Integration {
 	 *
 	 * Contact Form 7 listens to the following triggers.
 	 *
-	 * - _avangpress_subscribe_contact-form-7
+	 * - avangpress_subscribe_contact-form-7
 	 * - avangpress-subscribe
 	 *
 	 * @return bool

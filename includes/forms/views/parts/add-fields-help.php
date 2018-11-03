@@ -39,7 +39,7 @@
 				</p>
 
 				<p>
-					<a class="button button-primary" href="<?php echo esc_attr( add_query_arg( array( '_avangpress_action' => 'empty_lists_cache' ) ) ); ?>">
+					<a class="button button-primary" href="<?php echo esc_attr( add_query_arg( array( 'avangpress_action' => 'empty_lists_cache' ) ) ); ?>">
 						<?php _e( 'Renew Mail lists', 'avangpress' ); ?>
 					</a>
 				</p>

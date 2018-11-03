@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class Avangpress_AvangPress_Interests_Category
+ * Class Avangpress_Interests_Category
  *
  * Represents an Interest Category in AvangPress.
  *
@@ -58,7 +58,7 @@ class Avangpress_Mail_Interest_Category {
 	/**
 	 * @param object $data
 	 *
-	 * @return Avangpress_AvangPress_Interest_Category
+	 * @return Avangpress_Interest_Category
 	 */
 	public static function from_data($data) {
 		$instance = new self($data->id, $data->title, $data->type);

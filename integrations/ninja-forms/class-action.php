@@ -122,7 +122,7 @@ final class Avangpress_Ninja_Forms_Action extends NF_Abstracts_ActionNewsletter 
 	protected function get_lists() {
 		$mail = new Avangpress_Mail();
 
-		/** @var Avangpress_AvangPress_List[] $lists */
+		/** @var Avangpress_List[] $lists */
 		$lists = $mail->get_lists();
 		$return = array();
 
